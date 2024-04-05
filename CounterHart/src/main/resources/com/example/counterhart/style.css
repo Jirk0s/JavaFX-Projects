@@ -1,0 +1,12 @@
+#button_Minus{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-style: none;
+    -fx-background-color: red;
+}
+#button_plus{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-style: none;
+    -fx-background-color: green;
+}
