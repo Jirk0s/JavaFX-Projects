@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="422.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.counterhart.HelloController">
+   <children>
+      <Button id="button_Minus" fx:id="minusBtn" layoutX="58.0" layoutY="126.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="77.0" style="-fx-border-radius: 100%;" text="-">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Button id="button_plus" fx:id="plusBtn" layoutX="287.0" layoutY="126.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="77.0" style="-fx-border-radius: 100%;" text="+">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Text fx:id="resultText" layoutX="176.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="69.109375">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
