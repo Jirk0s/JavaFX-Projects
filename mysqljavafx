@@ -1,0 +1,86 @@
+Potřeba:
+  mysql-connector-j.jar : https://dev.mysql.com/downloads/connector/j/
+package com.example.mysql;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+
+import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class HelloController implements Initializable {
+    @FXML
+    private Button saveBtn;
+
+    @FXML
+    private ComboBox<String> tableCombo;
+
+    @FXML
+    private TableView<String> tableView;
+
+    @FXML
+    private Button vypsatBtn;
+
+    String user = "";
+    String pass = "";
+    String host = "";
+    String dbname = "";
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Chybí driver na mySQL Databázi" + e.getMessage());
+        }
+        vypsatBtn.setOnAction(this::getTable);
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://"+host+"/"+dbname+"?characterEncoding=UTF8",user,pass);
+            System.out.println("spojeni s DB navázáno");
+            Statement st = connection.createStatement();
+            ArrayList<String> tableArray = new ArrayList<String>();
+            ResultSet rs = st.executeQuery("SHOW TABLES");
+            while(rs.next()) {
+                tableArray.add(rs.getString(1));
+            }
+            tableCombo.setItems(FXCollections.observableArrayList(tableArray));
+        } catch (SQLException e) {
+            System.err.println("Chyba při navázání spojení s DB:" + e.getMessage());
+        }
+        vypsatBtn.setOnAction(this::getTable);
+    }
+    public void getTable(ActionEvent event){
+        if(tableCombo.getValue() != null){
+            tableView.getColumns().clear();
+            Connection connection = null;
+            try {
+                connection = DriverManager.getConnection("jdbc:mysql://" + host + "/" + dbname + "?characterEncoding=UTF8", user, pass);
+                Statement st = connection.createStatement();
+                ResultSet rsColumns = st.executeQuery("SELECT * FROM " + tableCombo.getValue());
+                while (rsColumns.next()) {
+                    String columnName = rsColumns.getString(1);
+                    TableColumn<String, Integer> column = new TableColumn<>(columnName);
+                    while(rsColumns.rowUpdated()){
+                        column.set(rsColumns.getString());
+                    }
+                    tableView.getColumns().add(column);
+                }
+                rsColumns.close();
+                rsData.close();
+                st.close();
+                connection.close();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }else System.out.println("Vyber tabulku!");
+    }
+}
