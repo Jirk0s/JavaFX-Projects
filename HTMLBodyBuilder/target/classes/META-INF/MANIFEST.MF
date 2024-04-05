@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: javafx-controls-18-win.jar javafx-controls-18.jar javafx-gra
+ phics-18-win.jar javafx-fxml-18-win.jar javafx-base-18-win.jar javafx-b
+ ase-18.jar javafx-fxml-18.jar javafx-graphics-18.jar
+
