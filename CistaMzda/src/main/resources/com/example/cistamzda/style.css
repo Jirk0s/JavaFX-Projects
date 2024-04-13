@@ -1,0 +1,12 @@
+.minus, .plus{
+    -fx-background-radius: 100%;
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-radius: 100%;
+    -fx-border-color: red;
+    -fx-border-width: 3px;
+    -fx-cursor: hand;
+}
+#plus{
+    -fx-border-color: green;
+}

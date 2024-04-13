@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="389.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cistamzda.HelloController">
+   <children>
+      <Text layoutX="66.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VÝPOČET ČISTÉ MZDY">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="135.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zadej výši hrubé mzdy" />
+      <TextField fx:id="hrubaField" layoutX="120.0" layoutY="145.0" />
+      <Text layoutX="142.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Osobní ohodnocení" />
+      <TextField fx:id="ohodnoceniField" layoutX="120.0" layoutY="200.0" />
+      <Button id="minus" fx:id="minusBtn" graphicTextGap="5.0" layoutX="163.0" layoutY="246.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="35.0" styleClass="minus" text="-" textFill="RED" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button id="plus" fx:id="plusBtn" layoutX="233.0" layoutY="246.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="35.0" styleClass="plus" text="+" textFill="GREEN" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="81.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Počet dětí" />
+      <Text fx:id="childText" layoutX="210.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="7.46875">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="resultBtn" layoutX="135.0" layoutY="297.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Vypočítej">
+         <effect>
+            <Reflection fraction="0.95" topOpacity="0.65" />
+         </effect>
+      </Button>
+      <Text layoutX="105.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sociální pojištění" />
+      <Text fx:id="socialniText" layoutX="229.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Kč" />
+      <Text layoutX="105.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zdravotní pojištění" />
+      <Text fx:id="zdravotniText" layoutX="230.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Kč" />
+      <Text fx:id="zalohaBonus" layoutX="105.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Záloha na daň" />
+      <Text fx:id="zalohaText" layoutX="230.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 Kč" />
+      <Line endX="142.0" layoutX="174.0" layoutY="464.0" startX="-100.0" />
+      <Text fx:id="resultText" layoutX="92.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="204.314453125">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
