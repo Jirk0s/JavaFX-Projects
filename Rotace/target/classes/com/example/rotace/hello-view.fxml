@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rotace.HelloController">
+   <children>
+      <ColorPicker fx:id="colorPicker" layoutX="303.0" layoutY="389.0">
+         <value>
+            <Color red="1.0" />
+         </value>
+      </ColorPicker>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="RED" height="200.0" layoutX="265.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Slider fx:id="degSlider" layoutX="56.0" layoutY="341.0" max="360.0" prefHeight="14.0" prefWidth="618.0" showTickLabels="true" showTickMarks="true" value="30.0" />
+   </children>
+</AnchorPane>
